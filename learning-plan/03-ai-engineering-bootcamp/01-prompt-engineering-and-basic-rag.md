@@ -1,6 +1,6 @@
-# Lesson 01: Prompt Engineering + Basic RAG
+# Lesson 01: Prompt Engineering + Basic RAG + DSPy + Agents
 
-**Estimated time:** 8-10 hours
+**Estimated time:** 12-15 hours
 **Week(s):** 1
 
 ## Learning Objectives
@@ -8,9 +8,12 @@
 - [ ] Understand transformer architecture and tokenization at a high level
 - [ ] Master prompt engineering patterns: zero-shot, few-shot, chain-of-thought
 - [ ] Use system prompts, role prompting, and structured output
+- [ ] **Use DSPy for auto-prompt optimization** (programmatic, not manual)
+- [ ] **Optimize dev workflows with Cursor and Windsurf** (vibe coding)
 - [ ] Implement retrieval-augmented generation from scratch
-- [ ] Use vector embeddings for semantic search
+- [ ] Use vector embeddings for semantic search (including **Milvus**)
 - [ ] Build a simple RAG application end-to-end
+- [ ] **Build functional AI agents using LangChain** (introduced in Week 1)
 
 ---
 
@@ -36,16 +39,51 @@
 | 📚 Prompt Engineering Guide | — | [promptingguide.ai](https://www.promptingguide.ai/) |
 | 📚 OpenAI Prompt Engineering Guide | — | [platform.openai.com/docs/guides/prompt-engineering](https://platform.openai.com/docs/guides/prompt-engineering) |
 
+### DSPy & Auto-Prompt Optimization
+
+| Resource | Duration | Link |
+|----------|----------|------|
+| 🎥 Neural Breakdown with AVB — Complete DSPy Tutorial: Master LLM Prompt Programming in 8 Examples | 35 min | [Class Central](https://www.classcentral.com/course/youtube-complete-dspy-tutorial-master-llm-prompt-programming-in-8-amazing-examples-409564) |
+| 🎥 Qdrant — Getting Started with DSPy: Building LLM Programs Tutorial | varies | [Class Central](https://www.classcentral.com/course/youtube-getting-started-with-dspy-tutorial-359160) |
+| 🎥 Mervin Praison — DSPy: Advanced AI RAG Framework with Auto Reasoning | varies | [Class Central](https://www.classcentral.com/course/youtube-dspy-most-advanced-ai-rag-framework-with-auto-reasoning-and-prompting-304162) |
+| 🎥 AI Engineer — DSPy: The End of Prompt Engineering (Kevin Madura, AlixPartners) | varies | [Class Central](https://www.classcentral.com/course/youtube-dspy-the-end-of-prompt-engineering-kevin-madura-alixpartners-519774) |
+| 📚 DSPy Documentation | — | [dspy.ai](https://dspy.ai/) |
+| 📚 DSPy Paper (Stanford NLP) | — | [arxiv.org/abs/2310.03714](https://arxiv.org/abs/2310.03714) |
+| 📚 AdalFlow Documentation (Li Yin — DataExpert guest speaker) | — | [adalflow.sylph.ai](https://adalflow.sylph.ai/) |
+| 📚 Hugging Face: Auto Prompt Optimization with DSPy and Cross Encoders | — | [huggingface.co/blog](https://huggingface.co/blog/dleemiller/auto-prompt-opt-dspy-cross-encoders) |
+
+### AI-Assisted Development (Vibe Coding)
+
+| Resource | Duration | Link |
+|----------|----------|------|
+| 🎥 Tech with Tim — Cursor Vibe Coding Tutorial for Complete Beginners | varies | [Class Central](https://www.classcentral.com/course/youtube-cursor-vibe-coding-tutorial-for-complete-beginners-no-experience-needed-456334) |
+| 🎥 Tech with Tim — Windsurf AI Code Editor Tutorial and Review | 19 min | [Class Central](https://www.classcentral.com/course/youtube-windsurf-tutorial-for-beginners-ai-code-editor-better-than-cursor-427369) |
+| 📚 Cursor Documentation | — | [docs.cursor.com](https://docs.cursor.com/) |
+| 📚 Windsurf Documentation | — | [docs.codeium.com/windsurf](https://docs.codeium.com/windsurf) |
+
 ### Basic RAG
 
 | Resource | Duration | Link |
 |----------|----------|------|
 | 🎥 Lance Martin — Learn RAG From Scratch (freeCodeCamp + LangChain, May 2024) | 2.5 hrs | [freecodecamp.org/news](https://www.freecodecamp.org/news/mastering-rag-from-scratch) |
 | 🔗 Lance Martin's RAG From Scratch (companion repo) | — | [github.com/langchain-ai/rag-from-scratch](https://github.com/langchain-ai/rag-from-scratch) |
+| 🎥 freeCodeCamp — Production RAG with LangChain & Vector Databases | varies | [freecodecamp.org/news](https://www.freecodecamp.org/news/production-rag-with-langchain-vector-databases/) |
 | 🎥 James Briggs — Chatbots with RAG, LangChain Full Walkthrough | varies | [Class Central](https://www.classcentral.com/course/youtube-chatbots-with-rag-langchain-full-walkthrough-209636) |
 | 🎥 Krish Naik — Complete RAG Crash Course With LangChain | 2 hrs | [Class Central](https://www.classcentral.com/course/youtube-complete-rag-crash-course-with-langchain-in-2-hours-488732) |
 | 🎥 Greg Kamradt — Full Stack Retrieval | varies | [community.fullstackretrieval.com](https://community.fullstackretrieval.com/) |
 | 📚 Anthropic: Building Effective Agents (excellent reading) | — | [anthropic.com/research/building-effective-agents](https://www.anthropic.com/research/building-effective-agents) |
+| 📚 Milvus Documentation (high-performance vector DB) | — | [milvus.io/docs](https://milvus.io/docs) |
+
+### LangChain Agents (Introduced Week 1)
+
+| Resource | Duration | Link |
+|----------|----------|------|
+| 🎥 Tech with Tim — Build a Python AI Agent in 10 Minutes | 10 min | [Class Central](https://www.classcentral.com/course/youtube-build-a-python-ai-agent-in-10-minutes-495572) |
+| 🎥 Tech with Tim — LangGraph Tutorial: Build Advanced AI Agent Systems | 47 min | [Class Central](https://www.classcentral.com/course/youtube-langgraph-tutorial-how-to-build-advanced-ai-agent-systems-450276) |
+| 🎥 Tech with Tim — Python Advanced AI Agent Tutorial (LangGraph + Firecrawl) | varies | [Class Central](https://www.classcentral.com/course/youtube-python-advanced-ai-agent-tutorial-langgraph-langchain-firecrawl-more-460361) |
+| 🎥 freeCodeCamp — Learn LangGraph and Build Conversational AI with Python | varies | [freecodecamp.org/news](https://www.freecodecamp.org/news/learn-langgraph-and-build-conversational-ai-with-python/) |
+| 🎓 LangChain Academy — Introduction to LangGraph (free) | varies | [academy.langchain.com](https://academy.langchain.com/courses/intro-to-langgraph) |
+| 📚 LangChain Agents Documentation | — | [python.langchain.com/docs/modules/agents](https://python.langchain.com/docs/modules/agents/) |
 
 ### Percipio (Skillsoft) Alternatives
 
@@ -55,6 +93,9 @@
 | 🎓 "Prompt Engineering for Developers" | Prompt patterns |
 | 🎓 "Generative AI Fundamentals" | Foundations |
 | 🎓 "Building AI Applications" | Practical building |
+| 🎓 "AI-Powered Development Tools" | Vibe coding / AI IDEs |
+| 🎓 "Vector Databases and Embeddings" | RAG foundations |
+| 🎓 "LangChain for AI Development" | Agent frameworks |
 
 ### Anthropic Academy (Free + Certificated)
 
@@ -163,6 +204,139 @@ Build something useful:
 - [ ] Test with realistic questions
 - [ ] Note where it fails — these become evaluation cases
 
+### Assignment 5: Auto-Prompt Optimization with DSPy (2 hrs)
+Move beyond manual prompt engineering — let the framework optimize for you:
+
+- [ ] Install DSPy: `pip install dspy`
+- [ ] Define a task as a DSPy module (e.g., question → answer)
+- [ ] Provide a few labeled examples as a training set
+- [ ] Use DSPy's optimizer (e.g., `BootstrapFewShot`, `MIPRO`) to find the best prompt
+- [ ] Compare DSPy-optimized prompt vs. your hand-crafted prompt on a test set
+- [ ] Log both prompts and results for comparison
+
+```python
+import dspy
+
+# Configure LLM
+lm = dspy.LM("openai/gpt-4o-mini")
+dspy.configure(lm=lm)
+
+# Define a simple task
+class ClassifySentiment(dspy.Signature):
+    """Classify the sentiment of a customer review."""
+    review: str = dspy.InputField()
+    sentiment: str = dspy.OutputField(desc="one of: positive, negative, neutral")
+
+# Create a module
+classify = dspy.Predict(ClassifySentiment)
+
+# Use it
+result = classify(review="The product arrived broken and support was unhelpful.")
+print(result.sentiment)
+
+# Optimize with labeled examples
+from dspy.teleprompt import BootstrapFewShot
+
+trainset = [
+    dspy.Example(review="Love this!", sentiment="positive").with_inputs("review"),
+    dspy.Example(review="Terrible quality.", sentiment="negative").with_inputs("review"),
+    # ... more examples
+]
+
+optimizer = BootstrapFewShot(metric=lambda ex, pred, trace=None: ex.sentiment == pred.sentiment)
+optimized = optimizer.compile(classify, trainset=trainset)
+```
+
+### Assignment 6: Vibe Coding — Full-Stack App in 45 Minutes (1.5 hrs)
+Practice AI-assisted development:
+
+- [ ] Pick a simple full-stack app idea (e.g., a bookmark manager, note-taking app, or todo with AI features)
+- [ ] Use Cursor or Windsurf to build it with AI assistance
+- [ ] Time yourself — goal is rapid prototyping, not perfection
+- [ ] Document what prompts/workflows were most effective
+- [ ] Reflect: what did the AI get wrong? What needed human intervention?
+
+### Assignment 7: Vectorize Inputs into Milvus (1.5 hrs)
+Learn Milvus — a production-grade vector DB for billion-scale search:
+
+- [ ] Set up Milvus locally with Docker (`docker compose up`) or use Zilliz Cloud free tier
+- [ ] Create a collection with an appropriate schema
+- [ ] Embed and insert document chunks
+- [ ] Perform similarity search queries
+- [ ] Compare to Chroma — when would you choose Milvus?
+
+```python
+from pymilvus import connections, Collection, FieldSchema, CollectionSchema, DataType, utility
+
+# Connect
+connections.connect("default", host="localhost", port="19530")
+
+# Define schema
+fields = [
+    FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
+    FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=2000),
+    FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=1536),
+]
+schema = CollectionSchema(fields, description="Document chunks")
+collection = Collection("docs", schema)
+
+# Insert (after embedding your chunks)
+collection.insert([texts, embeddings])
+
+# Create index + search
+collection.create_index("embedding", {"index_type": "IVF_FLAT", "metric_type": "COSINE", "params": {"nlist": 128}})
+collection.load()
+
+results = collection.search(
+    data=[query_embedding],
+    anns_field="embedding",
+    param={"metric_type": "COSINE", "params": {"nprobe": 10}},
+    limit=5,
+    output_fields=["text"]
+)
+```
+
+### Assignment 8: Build a Functional AI Agent with LangChain (2 hrs)
+Get hands-on with agents early:
+
+- [ ] Install langchain, langgraph, langchain-openai
+- [ ] Build an agent with 2-3 tools (e.g., calculator, web search, file reader)
+- [ ] Use LangChain's tool calling interface
+- [ ] Test with queries that require multi-step reasoning
+- [ ] Add basic error handling for failed tool calls
+
+```python
+from langchain_openai import ChatOpenAI
+from langchain.agents import create_tool_calling_agent, AgentExecutor
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.tools import tool
+
+@tool
+def search_docs(query: str) -> str:
+    """Search internal documentation for an answer."""
+    # Your RAG retrieval here
+    return "Found: ..."
+
+@tool
+def calculate(expression: str) -> str:
+    """Evaluate a math expression."""
+    return str(eval(expression))
+
+llm = ChatOpenAI(model="gpt-4o-mini")
+tools = [search_docs, calculate]
+
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a helpful assistant. Use tools when needed."),
+    ("human", "{input}"),
+    ("placeholder", "{agent_scratchpad}"),
+])
+
+agent = create_tool_calling_agent(llm, tools, prompt)
+executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+
+result = executor.invoke({"input": "What's the square root of our Q4 revenue?"})
+```
+
 ---
 
 ## Key Concepts to Master
@@ -175,8 +349,12 @@ Build something useful:
 6. **System vs. User Messages** — Role and intent
 7. **Temperature** — Determinism vs. creativity
 8. **RAG Architecture** — Retrieve → Augment → Generate
-9. **Vector Databases** — Chroma, Qdrant, Pinecone, pgvector
+9. **Vector Databases** — Chroma, Qdrant, Pinecone, pgvector, Milvus
 10. **Prompt Templates** — Reusable, parameterized prompts
+11. **DSPy / Auto-Prompt Optimization** — Programmatic prompt tuning; define task → provide examples → optimize automatically
+12. **Vibe Coding** — Using AI coding assistants (Cursor, Windsurf, Claude Code) for rapid development
+13. **LangChain Agents** — Tool-calling agents with multi-step reasoning
+14. **Milvus** — High-performance vector DB for production; supports IVF, HNSW indexes
 
 ---
 
@@ -208,6 +386,13 @@ Build something useful:
 - [ ] Completed Assignment 2 (RAG from scratch)
 - [ ] Completed Assignment 3 (RAG with LangChain)
 - [ ] Completed Assignment 4 (personal RAG)
+- [ ] Completed Assignment 5 (DSPy auto-prompt optimization)
+- [ ] Completed Assignment 6 (vibe coding full-stack app)
+- [ ] Completed Assignment 7 (Milvus vectorization)
+- [ ] Completed Assignment 8 (LangChain agent)
 - [ ] Can explain how a transformer generates next token (high level)
 - [ ] Can write effective prompts for new tasks
 - [ ] Can build a basic RAG without copy-pasting code
+- [ ] Can use DSPy to optimize prompts programmatically
+- [ ] Can use Cursor/Windsurf effectively for rapid development
+- [ ] Can build a simple tool-calling agent with LangChain

@@ -1,6 +1,6 @@
-# Lesson 03: MCP + Agentic AI + Agent Harnesses
+# Lesson 03: MCP + Agentic AI + Agent Harnesses + OpenClaw
 
-**Estimated time:** 10-12 hours (extended from 8-10 to cover harnesses)
+**Estimated time:** 12-15 hours (expanded to cover OpenClaw business automation)
 **Week(s):** 3
 
 ## Learning Objectives
@@ -17,6 +17,8 @@
 - [ ] **Understand the agent harness paradigm** — the runtime that surrounds the model
 - [ ] **Compare production harnesses:** Claude Code, Hermes Agent, OpenClaw, Codex
 - [ ] **Identify the 10 core harness patterns** (permission pipeline, context management, sandboxing, tool router, recovery, etc.)
+- [ ] **Use OpenClaw to automate business processes** — real-world workflow automation
+- [ ] **Build end-to-end business automation** with AI agents
 
 ---
 
@@ -51,6 +53,8 @@
 | 🎓 "AI Agents Fundamentals" | Agent concepts |
 | 🎓 "Multi-Agent Systems" | Coordination patterns |
 | 🎓 "LangChain and LangGraph" | Frameworks |
+| 🎓 "API Integration and Automation" | Tool use / MCP concepts |
+| 🎓 "Process Automation with AI" | Business process automation |
 
 ### Anthropic Academy (Free + Certificated) — Critical for This Lesson
 
@@ -75,6 +79,17 @@ These are the most directly relevant Anthropic Academy courses for MCP and agent
 | 🎥 Claude Code product lead on the "lean harness" (Ars Technica interview) | Reading | [arstechnica.com](https://arstechnica.com/ai/2026/05/claude-codes-product-lead-talks-usage-limits-transparency-and-the-lean-harness/) |
 | 🔗 Hermes Agent (open-source, Nous Research) | Code | [github.com/nousresearch/hermes-agent](https://github.com/nousresearch/hermes-agent) |
 | 🔗 Hermes Agent docs | Reading | [hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent) |
+
+### OpenClaw & Business Process Automation (Major Focus — 8 sessions in curriculum)
+
+| Resource | Type | Link |
+|----------|------|------|
+| 🎥 freeCodeCamp — OpenClaw Full Tutorial for Beginners | Video (free) | [freecodecamp.org/news](https://www.freecodecamp.org/news/openclaw-full-tutorial-for-beginners/) |
+| 🎥 freeCodeCamp — How to Build and Secure a Personal AI Agent with OpenClaw | Video (free) | [freecodecamp.org/news](https://freecodecamp.org/news/how-to-build-and-secure-a-personal-ai-agent-with-openclaw) |
+| 📚 OpenClaw Complete Tutorial 2026 (Towards AI) | Reading | [pub.towardsai.net](https://pub.towardsai.net/openclaw-complete-guide-setup-tutorial-2026-14dd1ae6d1c2) |
+| 📚 Lenny's Newsletter — Complete Guide to OpenClaw (Claire Vo) | Reading | [lennysnewsletter.com](https://www.lennysnewsletter.com/p/openclaw-the-complete-guide-to-building) |
+| 📚 OpenClaw + LM Studio (free local setup) | Reading | [mrprompts.substack.com](https://mrprompts.substack.com/p/how-to-set-up-openclaw-your-247-ai) |
+| 🔗 OpenClaw GitHub | Code | [github.com/openclaw](https://github.com/) |
 
 ---
 
@@ -190,6 +205,71 @@ Now that you've studied one, build the smallest possible harness yourself:
 - [ ] Retry logic on tool errors (max 3 retries)
 - [ ] Compare your minimal harness to LangGraph, CrewAI, and Claude Code — what tradeoffs did you make?
 
+### Assignment 9: Automate a Business Process with OpenClaw (3 hrs)
+OpenClaw is a major focus of the bootcamp (8 total sessions across Weeks 3-4). This assignment covers the Week 3 portion — automation. Week 4 covers safeguards and business value measurement (see Lesson 04).
+
+- [ ] Install and configure OpenClaw
+- [ ] Identify a real business process to automate (e.g., customer onboarding, report generation, data pipeline orchestration, code review triage)
+- [ ] Define the workflow: triggers → steps → outputs → human checkpoints
+- [ ] Implement the automation using OpenClaw's agent framework
+- [ ] Add appropriate tool access (file system, APIs, databases)
+- [ ] Test with realistic scenarios — what breaks? What needs human oversight?
+- [ ] Document the before/after: how long did this process take manually vs. automated?
+
+```python
+# Conceptual OpenClaw workflow structure
+# (adapt to actual OpenClaw API — check bootcamp materials for latest)
+
+workflow = {
+    "name": "Customer Onboarding Report",
+    "trigger": "new_customer_signup",
+    "steps": [
+        {
+            "action": "fetch_customer_data",
+            "tool": "crm_api",
+            "requires_approval": False
+        },
+        {
+            "action": "generate_welcome_email",
+            "tool": "llm_generate",
+            "requires_approval": True  # Human reviews before sending
+        },
+        {
+            "action": "create_account_setup_tasks",
+            "tool": "project_management_api",
+            "requires_approval": False
+        },
+        {
+            "action": "send_onboarding_report_to_team",
+            "tool": "slack_api",
+            "requires_approval": False
+        }
+    ],
+    "safeguards": {
+        "max_cost_per_run": 0.50,
+        "timeout_seconds": 120,
+        "require_human_for": ["send_email", "create_invoice"]
+    }
+}
+```
+
+### Assignment 10: Compare Agent Frameworks (1.5 hrs)
+Now that you've used multiple approaches, synthesize:
+
+- [ ] Fill in a comparison matrix:
+
+| Feature | Raw Python Loop | LangGraph | CrewAI | OpenClaw | Claude Code |
+|---------|----------------|-----------|--------|----------|-------------|
+| Ease of setup | | | | | |
+| Flexibility | | | | | |
+| Multi-agent | | | | | |
+| Permission control | | | | | |
+| Cost tracking | | | | | |
+| Production-ready | | | | | |
+| Best for... | | | | | |
+
+- [ ] Write a 1-page recommendation: which framework would you use for your next project and why?
+
 ---
 
 ## Key Concepts to Master
@@ -261,8 +341,12 @@ Now that you've studied one, build the smallest possible harness yourself:
 - [ ] Completed Assignment 6 (safety controls)
 - [ ] Completed Assignment 7 (study a production harness)
 - [ ] Completed Assignment 8 (build a minimal harness — optional)
+- [ ] Completed Assignment 9 (OpenClaw business automation)
+- [ ] Completed Assignment 10 (framework comparison)
 - [ ] Can build an MCP server from scratch
 - [ ] Can debug an agent that's stuck in a loop
 - [ ] Can decide between single-agent and multi-agent approaches
 - [ ] Can name and explain at least 5 of the 10 harness patterns
 - [ ] Can articulate why the harness matters more than the model in production
+- [ ] Can use OpenClaw to automate a real business process
+- [ ] Can compare and choose between agent frameworks for a given use case
