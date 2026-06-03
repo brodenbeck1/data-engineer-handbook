@@ -1,6 +1,6 @@
-# Lesson 02: RAG Optimizations + Reranking
+# Lesson 02: RAG Optimizations + Reranking + Graph RAG + Dev Workflows
 
-**Estimated time:** 8-10 hours
+**Estimated time:** 12-15 hours
 **Week(s):** 2
 
 ## Learning Objectives
@@ -13,6 +13,11 @@
 - [ ] Build evaluation pipelines for RAG (RAGAS, custom metrics)
 - [ ] Apply contextual retrieval (Anthropic's pattern)
 - [ ] Implement multi-query and parent-document retrieval
+- [ ] **Build Graph RAG** — understand when graph structure beats vectors
+- [ ] **Compare Graph RAG vs. Vector RAG** in production scenarios
+- [ ] **Optimize dev workflows with Claude Code and Codex CLI**
+- [ ] **Understand agent types:** reflection, plan-and-execute, ReWOO
+- [ ] **Enhance RAG with agentic patterns**
 
 ---
 
@@ -47,6 +52,41 @@
 | 📚 Eugene Yan — Patterns for Building LLM Applications | — | [eugeneyan.com](https://eugeneyan.com/) |
 | 📚 RAGAS Documentation | — | [ragas.io](https://docs.ragas.io/) |
 
+### Graph RAG
+
+| Resource | Duration | Link |
+|----------|----------|------|
+| 🎥 freeCodeCamp — How to Solve 5 Common RAG Failures with Knowledge Graphs | varies | [freecodecamp.org/news](https://www.freecodecamp.org/news/how-to-solve-5-common-rag-failures-with-knowledge-graphs/) |
+| 🎥 freeCodeCamp — Production RAG with LangChain & Vector Databases (includes graph patterns) | varies | [freecodecamp.org/news](https://www.freecodecamp.org/news/production-rag-with-langchain-vector-databases/) |
+| 📚 Microsoft GraphRAG (official repo) | — | [github.com/microsoft/graphrag](https://github.com/microsoft/graphrag) |
+| 📚 Microsoft Research — GraphRAG: Unlocking LLM Discovery on Narrative Private Data | — | [microsoft.com/research](https://www.microsoft.com/en-us/research/blog/graphrag-unlocking-llm-discovery-on-narrative-private-data/) |
+| 📚 Neo4j — Using a Knowledge Graph to implement RAG | — | [neo4j.com/blog](https://neo4j.com/blog/developer/rag-tutorial/) |
+| 📚 Neo4j GraphAcademy (free courses + certs) | — | [graphacademy.neo4j.com](https://graphacademy.neo4j.com/) |
+| 📚 LlamaIndex Knowledge Graph Index | — | [docs.llamaindex.ai](https://docs.llamaindex.ai/en/stable/examples/index_structs/knowledge_graph/) |
+| 📚 From Local to Global: A Graph RAG Approach (paper) | — | [arxiv.org/abs/2404.16130](https://arxiv.org/abs/2404.16130) |
+
+### Claude Code + Codex Dev Workflows
+
+| Resource | Duration | Link |
+|----------|----------|------|
+| 🎥 freeCodeCamp — Claude Code Essentials (agentic workflows) | varies | [freecodecamp.org/news](https://www.freecodecamp.org/news/claude-code-essentials/) |
+| 🎥 freeCodeCamp — Claude Code for Beginners | varies | [freecodecamp.org/news](https://www.freecodecamp.org/news/claude-code-for-beginners/) |
+| 🎥 Kevin Stratvert — Claude Code Tutorial for Beginners | varies | [Class Central](https://www.classcentral.com/course/youtube-claude-code-tutorial-for-beginners-516061) |
+| 🎓 Anthropic Academy: Claude Code (Cowork, skills, plugins) | 3-4 hrs | [anthropic.skilljar.com](https://anthropic.skilljar.com/) |
+| 📚 Anthropic — Best Practices for Claude Code | — | [anthropic.com/engineering/claude-code-best-practices](https://www.anthropic.com/engineering/claude-code-best-practices) |
+| 📚 Claude Code Documentation | — | [docs.anthropic.com/en/docs/claude-code](https://docs.anthropic.com/en/docs/claude-code) |
+| 📚 OpenAI Codex CLI | — | [github.com/openai/codex](https://github.com/openai/codex) |
+
+### Agent Types & Agentic RAG
+
+| Resource | Duration | Link |
+|----------|----------|------|
+| 🎥 Tech with Tim — How to Build an Advanced AI Agent with Search (LangGraph) | varies | [Class Central](https://www.classcentral.com/course/youtube-how-to-build-an-advanced-ai-agent-with-search-langgraph-python-bright-data-more-479144) |
+| 🎥 freeCodeCamp — Learn RAG & MCP Fundamentals | varies | [freecodecamp.org/news](https://www.freecodecamp.org/news/learn-rag-and-mcp-fundamentals/) |
+| 📚 LangGraph Agent Architectures | — | [langchain-ai.github.io/langgraph](https://langchain-ai.github.io/langgraph/) |
+| 📚 ReWOO Paper (Reasoning Without Observation) | — | [arxiv.org/abs/2305.18323](https://arxiv.org/abs/2305.18323) |
+| 📚 Anthropic: Building Effective Agents | — | [anthropic.com/research/building-effective-agents](https://www.anthropic.com/research/building-effective-agents) |
+
 ### Percipio (Skillsoft) Alternatives
 
 | Course | Topic |
@@ -54,6 +94,9 @@
 | 🎓 "Advanced RAG Patterns" | Optimizations |
 | 🎓 "Vector Databases" | Storage and search |
 | 🎓 "AI Application Evaluation" | Testing |
+| 🎓 "Knowledge Graphs and Graph Databases" | Graph RAG foundations |
+| 🎓 "AI-Powered Development" | Claude Code / AI IDE workflows |
+| 🎓 "Neo4j Fundamentals" | Graph database for Graph RAG |
 
 ### Anthropic Academy (Free + Certificated)
 
@@ -129,6 +172,72 @@ ranked = sorted(zip(candidates, scores), key=lambda x: x[1], reverse=True)[:5]
 - [ ] Create a notebook that compares 3+ RAG variants on these metrics
 - [ ] Iterate based on results
 
+### Assignment 7: Graph RAG vs. Vector RAG (2.5 hrs)
+Build Graph RAG and compare to your vector-based system:
+
+- [ ] Pick a dataset with relational structure (org charts, documentation with cross-references, code repos)
+- [ ] Build a knowledge graph from your documents (entities + relationships)
+- [ ] Use Neo4j or a lightweight graph (networkx for prototyping)
+- [ ] Implement graph traversal for retrieval (vs. embedding similarity)
+- [ ] Compare on the same test set: which questions does Graph RAG answer better?
+- [ ] Identify when to use each: vector for semantic similarity, graph for relational/structural queries
+
+```python
+# Simplified Graph RAG with LangChain + Neo4j
+from langchain_community.graphs import Neo4jGraph
+from langchain.chains import GraphCypherQAChain
+from langchain_openai import ChatOpenAI
+
+graph = Neo4jGraph(url="bolt://localhost:7687", username="neo4j", password="password")
+
+# Extract entities and relationships from docs
+# (in production, use an LLM to extract these)
+graph.query("""
+CREATE (p:Person {name: 'Alice'})-[:WORKS_AT]->(c:Company {name: 'Acme'})
+CREATE (p2:Person {name: 'Bob'})-[:REPORTS_TO]->(p)
+""")
+
+# Query with natural language → Cypher
+chain = GraphCypherQAChain.from_llm(
+    ChatOpenAI(model="gpt-4o-mini"),
+    graph=graph,
+    verbose=True
+)
+result = chain.invoke({"query": "Who reports to Alice?"})
+```
+
+### Assignment 8: Claude Code + Codex Dev Workflow (2 hrs)
+Master AI-assisted coding tools for daily development:
+
+- [ ] Install Claude Code CLI: `npm install -g @anthropic-ai/claude-code`
+- [ ] Install OpenAI Codex CLI (if available)
+- [ ] Use Claude Code for a real task: refactoring, adding tests, or building a feature
+- [ ] Practice the "cowork" loop: plan → implement → review → iterate
+- [ ] Compare Claude Code vs. Codex on the same task
+- [ ] Document your most effective workflows and prompts
+- [ ] Try Claude Code's skills system — save reusable procedures
+
+### Assignment 9: Agent Types — Reflection, Plan-and-Execute, ReWOO (2 hrs)
+Understand different agent architectures:
+
+- [ ] **Reflection agent:** Build an agent that critiques its own output and iterates
+- [ ] **Plan-and-execute:** Agent that plans all steps first, then executes in order
+- [ ] **ReWOO (Reasoning Without Observation):** Plan reasoning steps before executing tools (more token-efficient)
+- [ ] Compare: which architecture works best for which types of tasks?
+- [ ] Build a simple "agentic RAG" that decides retrieval strategy based on the query
+
+```python
+# Reflection pattern
+def reflection_agent(query, max_iterations=3):
+    draft = generate_answer(query)
+    for i in range(max_iterations):
+        critique = critic_llm(f"Critique this answer:\n{draft}\n\nOriginal question: {query}")
+        if "APPROVED" in critique:
+            return draft
+        draft = generate_answer(f"{query}\n\nPrevious attempt: {draft}\nFeedback: {critique}")
+    return draft
+```
+
 ---
 
 ## Key Concepts to Master
@@ -143,6 +252,11 @@ ranked = sorted(zip(candidates, scores), key=lambda x: x[1], reverse=True)[:5]
 8. **Contextual Retrieval** — Add context before embedding
 9. **Parent-Document Retrieval** — Embed small chunks, return larger context
 10. **RAG Evaluation** — Faithfulness, relevance, precision, recall
+11. **Graph RAG** — Knowledge graphs for relational retrieval; best for structured/hierarchical data
+12. **Vector RAG vs. Graph RAG** — Vectors for semantic similarity, graphs for relational queries; can be combined
+13. **Agent Types** — Reflection (self-critique), Plan-and-Execute (plan first), ReWOO (reason without observation)
+14. **Agentic RAG** — Agent decides retrieval strategy dynamically based on query type
+15. **Claude Code / Codex Workflows** — AI-assisted coding for rapid implementation and refactoring
 
 ---
 
@@ -166,6 +280,12 @@ ranked = sorted(zip(candidates, scores), key=lambda x: x[1], reverse=True)[:5]
 - [ ] Completed Assignment 4 (reranking)
 - [ ] Completed Assignment 5 (contextual retrieval)
 - [ ] Completed Assignment 6 (evaluation pipeline)
+- [ ] Completed Assignment 7 (Graph RAG vs. Vector RAG)
+- [ ] Completed Assignment 8 (Claude Code + Codex workflows)
+- [ ] Completed Assignment 9 (agent types)
 - [ ] Can diagnose why a RAG system is failing
 - [ ] Can choose the right optimization for a given failure mode
 - [ ] Have a working evaluation harness
+- [ ] Can explain when to use Graph RAG vs. Vector RAG
+- [ ] Can use Claude Code / Codex effectively for development
+- [ ] Can explain reflection, plan-and-execute, and ReWOO agent patterns
